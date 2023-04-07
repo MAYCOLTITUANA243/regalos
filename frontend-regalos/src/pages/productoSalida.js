@@ -34,7 +34,6 @@ function Copyright() {
     </Typography>
   );
 }
-//
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -115,7 +114,7 @@ function App() {
   };
 
   const comprarRegalo = () => {
-    const phoneNumber = '+593997676831';
+    const phoneNumber = '+593987819155';
     const message = 'Hola, me gustaria tener informacion sobre:\n'; 
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message+nombre+"\n"+selectedImage+"\n"+precio)}`;

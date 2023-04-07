@@ -12,6 +12,7 @@ import Instagram from '../img/instagram.webp';
 import Google from '../img/google.webp';
 import Domicilio from '../img/domicilio.png';
 import { Carousel } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Table
 } from "reactstrap";
@@ -30,7 +31,7 @@ function Copyright() {
   );
 }
 const comprarRegalo = () => {
-    const phoneNumber = '+593997676831';
+    const phoneNumber = '+593987819155';
     const message = 'Hola, necesito más información sobre los productos de Regalos Ya.\n'; 
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
