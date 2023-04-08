@@ -4,13 +4,10 @@ const Layout = () =>{
         <nav>
             <ul>
                 <li>
-                    <Link to="/home">Home</Link>
+                    <Link to="/home"><h3>Home</h3></Link>
                 </li>
                 <li>
-                    <Link to="/productos">Ingreso de Productos</Link>
-                </li>
-                <li>
-                    <Link to="/catalogo">Catálogo</Link>
+                    <Link to="/catalogo"><h3>Catálogo</h3></Link>
                 </li>
             </ul>
         </nav>

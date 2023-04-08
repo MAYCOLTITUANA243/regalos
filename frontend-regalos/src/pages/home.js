@@ -31,7 +31,7 @@ function Copyright() {
   );
 }
 const comprarRegalo = () => {
-    const phoneNumber = '+593987819155';
+    const phoneNumber = '+593997676831';
     const message = 'Hola, necesito más información sobre los productos de Regalos Ya.\n'; 
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
