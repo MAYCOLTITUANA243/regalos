@@ -189,24 +189,24 @@ nav a {
 
 @media screen and (max-width: 768px) {
   #conte{
-    background-image: url('./img/logo.gif');
+    /*background-image: url('./img/logo.gif');*/
     width: 100%;
     height: auto;
     margin: 0 auto;
     background-size: cover;
-    background-size: 150% 300px;
+    background-size: 150% 100%;
     background-position: center center;
     filter: brightness(1.1) contrast(1.1) saturate(1.2);
 }
 }
 @media screen and (min-width: 780px) {
 #conte{
-    background-image: url('./img/logo.gif');
+    /*background-image: url('./img/logo.gif');*/
     width: 100%;
     height: auto;
     max-width: 100%;
     margin: 0 auto;
-    background-size: 100% 300px;
+    background-size: 100% 100%;
     background-position: center center;
     filter: brightness(1.1) contrast(1.1) saturate(1.2);
 }
