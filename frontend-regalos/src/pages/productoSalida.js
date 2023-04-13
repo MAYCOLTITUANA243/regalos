@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
   },
   imageModal: {
-    width: '90%',
+    width: '50%',
     maxHeight: '470px',
     filter: 'brightness(1.1) contrast(1.1) saturate(1.2)',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
