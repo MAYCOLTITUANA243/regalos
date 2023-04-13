@@ -4,7 +4,6 @@ import axios from "axios";
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -17,11 +16,10 @@ import Whatsapp from '../img/whatsapp.png';
 import Instagram from '../img/instagram.webp';
 import Google from '../img/google.webp';
 import Domicilio from '../img/domicilio.png';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody} from 'reactstrap';
 import {
   Table
 } from "reactstrap";
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -34,6 +32,7 @@ function Copyright() {
     </Typography>
   );
 }
+
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -53,6 +52,9 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+    borderRadius: '8px'
+    
   },
   cardMedia: {
     paddingTop: '56.25%', // 16:9
@@ -81,9 +83,22 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
   },
   imageModal: {
-    maxWidth: '50%',
-    maxHeight: '50%',
+    width: '90%',
+    maxHeight: '470px',
+    filter: 'brightness(1.1) contrast(1.1) saturate(1.2)',
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+    borderRadius: '10px'
   },
+
+  img:{
+    height:'auto',
+    width:'auto',
+    maxWidth:'100%',
+    maxHeight:'350px',
+    filter: 'brightness(1.1) contrast(1.1) saturate(1.2)',
+    
+  },
+  
 }));
 
 function App() {
@@ -155,31 +170,22 @@ function App() {
             {data.map((item) => (
               <Grid item key={classes.card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    onClick={() => guardarDatos(item.url,item.nombre,item.precio)}
-                    image={item.url}
-                    title="Image title"
-                  />
-
+                <img className={classes.img} src={item.url} onClick={() => guardarDatos(item.url,item.nombre,item.precio)}></img>
                    <Modal isOpen={modal} toggle={handleClose}>
-                    <ModalHeader toggle={handleClose} className="text-center"><div  className="d-flex justify-content-center" >{nombre}</div> </ModalHeader>
+                    <ModalHeader toggle={handleClose} className="text-center"><Typography gutterBottom variant="h5" component="h2" align="center">
+                    {nombre}
+                    </Typography></ModalHeader>
                     <ModalBody>
                     <div className={classes.imageContainer}>
                       <img className={classes.imageModal} src={selectedImage} alt="Imagen" />
                     </div>
                     </ModalBody>
-                    <ModalFooter>
-                      <Button color="primary" onClick={()=>comprarRegalo()}>Comprar</Button>
-                      <Button color="secondary" onClick={()=>handleClose()}>Cerrar</Button>
-                    </ModalFooter>
                   </Modal>
-
                   <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography gutterBottom variant="h5" component="h2" align="center">
                       {item.nombre}
                     </Typography>
-                    <Typography>
+                    <Typography  align="justify" >
                       {item.descripcion}
                     </Typography>
                   </CardContent>
