@@ -157,3 +157,20 @@ nav a {
   height: 100%;
 }
 
+.contenedor-imagenes {
+  position: relative;
+}
+
+.imagen-fondo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.imagen-superpuesta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: auto;
+}
