@@ -17,6 +17,7 @@ function App(){
           alignContent:'center',
           width: '150%',
           height: '300px',
+          filter: 'brightness(1.1) contrast(1.1) saturate(1.2)',
         }}/>
       </div>
       <Routes>

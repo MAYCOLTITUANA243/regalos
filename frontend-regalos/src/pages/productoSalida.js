@@ -127,12 +127,16 @@ function App() {
     setPrecio(precio);
     toggle();
   };
-
+  const guardarDatosV = (url,nombre,precio) => {
+    setSelectedImage(url);
+    setNombre(nombre);
+    setPrecio(precio);
+    comprarRegalo()
+  };
   const comprarRegalo = () => {
     const phoneNumber = '+593997676831';
-    const message = 'Hola, me gustaria tener informacion sobre:\n'; 
-
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message+nombre+"\n"+selectedImage+"\n"+precio)}`;
+    const message = 'Hola, me gustaría tener información sobre:\n'; 
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message+nombre+"\n"+selectedImage+"\n")}`;
     window.open(url);
   };
 
@@ -190,8 +194,8 @@ function App() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary" onClick={()=>comprarRegalo()}>
-                      Comprar
+                    <Button size="small" color="primary" onClick={() => guardarDatosV(item.url,item.nombre,item.precio)}>
+                      Detalle
                     </Button>
                   </CardActions>
                 </Card>
