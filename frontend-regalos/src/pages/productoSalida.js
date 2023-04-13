@@ -131,12 +131,12 @@ function App() {
     setSelectedImage(url);
     setNombre(nombre);
     setPrecio(precio);
-    comprarRegalo()
+    comprarRegalo(nombre,url)
   };
-  const comprarRegalo = () => {
+  const comprarRegalo = (name,direccion) => {
     const phoneNumber = '+593997676831';
     const message = 'Hola, me gustaría tener información sobre:\n'; 
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message+nombre+"\n"+selectedImage+"\n")}`;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message+name+"\n"+direccion+"\n")}`;
     window.open(url);
   };
 
