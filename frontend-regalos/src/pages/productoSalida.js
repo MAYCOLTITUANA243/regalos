@@ -182,9 +182,6 @@ function App() {
                     <Typography>
                       {item.descripcion}
                     </Typography>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      ${item.precio}
-                    </Typography>
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary" onClick={()=>comprarRegalo()}>
