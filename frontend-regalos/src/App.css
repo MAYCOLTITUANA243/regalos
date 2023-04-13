@@ -39,7 +39,7 @@
 
 nav {
   background-color: lightgray;
-  padding: 10px;
+  padding-top: 10px;
 }
 
 nav ul {
@@ -156,21 +156,55 @@ nav a {
   object-position: center;
   height: 100%;
 }
-
-.contenedor-imagenes {
-  position: relative;
+.App {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 16px;
 }
 
-.imagen-fondo {
-  display: block;
-  width: 100%;
-  height: auto;
+@media screen and (min-width: 768px) {
+  .App {
+    padding: 0 32px;
+  }
 }
 
-.imagen-superpuesta {
-  position: absolute;
-  top: 0;
-  left: 0;
+@media screen and (min-width: 992px) {
+  .App {
+    padding: 0 64px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .App {
+    padding: 0 96px;
+  }
+}
+
+.imagen {
+  max-width: 100%;
   width: 50%;
-  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  #conte{
+    background-image: url('./img/logo.gif');
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-size: cover;
+    background-size: 150% 100%;
+    background-position: center center;
+}
+}
+@media screen and (min-width: 780px) {
+#conte{
+    background-image: url('./img/logo.gif');
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    background-size: 100% 100%;
+    background-position: center center;
+    filter: 'brightness(1.1) contrast(1.1) saturate(1.2)';
+}
 }

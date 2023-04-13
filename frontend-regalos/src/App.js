@@ -7,18 +7,12 @@ import Logo from './img/logo.gif';
 function App(){
   return(
     <div className="App" class="bg-light">
-      <div style={{
+      <div id='conte' style={{
       display: 'flex',
       justifyContent: 'center',
-      background:'#22252C'
+      width:'100%',
+      height:'300px'
       }}>
-        <img src={Logo} alt="Descripción de la imagen" 
-        style={{
-          alignContent:'center',
-          width: '150%',
-          height: '300px',
-          filter: 'brightness(1.1) contrast(1.1) saturate(1.2)',
-        }}/>
       </div>
       <Routes>
         <Route path="/" element={<Layout/>}>
