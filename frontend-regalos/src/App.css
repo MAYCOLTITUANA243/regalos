@@ -189,7 +189,7 @@ nav a {
 
 @media screen and (max-width: 768px) {
   #conte{
-    /*background-image: url('./img/logo.gif');*/
+    background-image: url('./img/logo.gif');
     width: 100%;
     height: auto;
     margin: 0 auto;
@@ -201,7 +201,7 @@ nav a {
 }
 @media screen and (min-width: 780px) {
 #conte{
-    /*background-image: url('./img/logo.gif');*/
+    background-image: url('./img/logo.gif');
     width: 100%;
     height: auto;
     max-width: 100%;

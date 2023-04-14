@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
   },
   imageModal: {
-    width: '50%',
+    width: '90%',
     maxHeight: '470px',
     filter: 'brightness(1.1) contrast(1.1) saturate(1.2)',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
@@ -105,7 +105,6 @@ function App() {
 
   const [selectedImage, setSelectedImage] = useState("");
   const [nombre, setNombre] = useState("");
-  const [precio, setPrecio] = useState("");
   const [modal, setModal] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -121,16 +120,14 @@ function App() {
     setIsModalOpen(false);
   }, []);
 
-  const guardarDatos = (url,nombre,precio) => {
+  const guardarDatos = (url,nombre) => {
     setSelectedImage(url);
     setNombre(nombre);
-    setPrecio(precio);
     toggle();
   };
-  const guardarDatosV = (url,nombre,precio) => {
+  const guardarDatosV = (url,nombre) => {
     setSelectedImage(url);
     setNombre(nombre);
-    setPrecio(precio);
     comprarRegalo(nombre,url)
   };
   const comprarRegalo = (name,direccion) => {
@@ -174,17 +171,8 @@ function App() {
             {data.map((item) => (
               <Grid item key={classes.card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
-                <img className={classes.img} src={item.url} onClick={() => guardarDatos(item.url,item.nombre,item.precio)}></img>
-                   <Modal isOpen={modal} toggle={handleClose}>
-                    <ModalHeader toggle={handleClose} className="text-center"><Typography gutterBottom variant="h5" component="h2" align="center">
-                    {nombre}
-                    </Typography></ModalHeader>
-                    <ModalBody>
-                    <div className={classes.imageContainer}>
-                      <img className={classes.imageModal} src={selectedImage} alt="Imagen" />
-                    </div>
-                    </ModalBody>
-                  </Modal>
+                <img className={classes.img} src={item.url} onClick={() => guardarDatos(item.url,item.nombre)}></img>
+
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2" align="center">
                       {item.nombre}
@@ -289,6 +277,17 @@ function App() {
       </footer>
       {/* End footer */}
     </React.Fragment>
+
+    <Modal isOpen={modal} toggle={handleClose}>
+      <ModalHeader toggle={handleClose} className="text-center"><Typography gutterBottom variant="h5" component="h2" align="center">
+        {nombre}
+        </Typography></ModalHeader>
+        <ModalBody>
+        <div className={classes.imageContainer}>
+        <img className={classes.imageModal} src={selectedImage} alt="Imagen" />
+      </div>
+      </ModalBody>
+    </Modal>
     </div>
   );
 }

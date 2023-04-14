@@ -3,7 +3,6 @@ import { Routes, Route} from 'react-router-dom';
 import Layout from './pages/Layout';
 import Catalogo from './pages/productoSalida';
 import Home from './pages/home';
-import Logo from './img/logo.gif';
 function App(){
   return(
     <div className="App" class="bg-light">
